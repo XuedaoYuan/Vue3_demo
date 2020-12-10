@@ -1,12 +1,14 @@
 <template>
-  <div>Hi</div>
+  <div>Hi {{name}}</div>
 </template>
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 // import  from '@/components/ .vue'
 @Options({
   name: "ComponentName",
-  props: {},
+  props: {
+    name: String
+  },
   components: {}
 })
 export default class ComponentName extends Vue {
