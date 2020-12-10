@@ -15,6 +15,10 @@ module.exports = {
   },
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off"
+    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    semi: [0, "never"],
+    quotes: [0, "single"],
+    indent: 0,
+    "jsx-quotes": 0
   }
 };
