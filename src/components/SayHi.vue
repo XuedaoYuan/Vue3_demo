@@ -1,5 +1,5 @@
 <template>
-  <div>Hi {{name}}</div>
+  <div>Hi {{ name }}</div>
 </template>
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";

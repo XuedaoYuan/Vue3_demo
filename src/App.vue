@@ -2,11 +2,33 @@
   <div id="nav">
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
+    <router-link to="/data-property">data属性</router-link>
   </div>
   <div class="page_container">
     <router-view />
   </div>
 </template>
+
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+// import  from '@/components/ .vue'
+@Options({
+  name: "App",
+  props: {},
+  components: {}
+})
+export default class App extends Vue {
+  // @Prop(type)private propName = propValue;
+  /* data */
+  // private variableName: typeName = variableValue;
+  /* computed */
+  /* wactch */
+  /* life cycle */
+  // public created() {}
+  /* methods */
+  // public methodName() {}
+}
+</script>
 
 <style lang="stylus">
 #app {
@@ -40,3 +62,4 @@
   }
 }
 </style>
+
