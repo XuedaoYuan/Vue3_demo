@@ -5,7 +5,7 @@
 import { Options, Vue } from "vue-class-component";
 // import  from '@/components/ .vue'
 @Options({
-  name: "ComponentName",
+  name: "SayHi",
   props: {
     name: String
   },

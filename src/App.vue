@@ -3,6 +3,10 @@
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
     <router-link to="/data-property">data属性</router-link>
+    <router-link to="/event-handler">事件处理</router-link>
+    <router-link to="/provider-inject">provider/inject</router-link>
+    <router-link to="/async-components">async components</router-link>
+    <router-link to="/setup">setup</router-link>
   </div>
   <div class="page_container">
     <router-view />
@@ -10,10 +14,10 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
+import { Options, Vue } from 'vue-class-component';
 // import  from '@/components/ .vue'
 @Options({
-  name: "App",
+  name: 'App',
   props: {},
   components: {}
 })
@@ -62,4 +66,3 @@ export default class App extends Vue {
   }
 }
 </style>
-

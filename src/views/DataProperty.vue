@@ -4,27 +4,27 @@
     <pre>
       `private dataDemo = "data 选项";`
     </pre>
-    <p>
+    <p :style="{color: 'red'}">
       {{dataOption}}
     </p>
   </div>
 </template>
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
+import { Options, Vue } from 'vue-class-component';
 // import  from '@/components/ .vue'
 @Options({
-  name: "DataProperty",
+  name: 'DataProperty',
   props: {},
   data() {
     return {
-      dataOption: "dataOption"
+      dataOption: 'dataOption'
     };
   },
   components: {}
 })
 export default class DataProperty extends Vue {
   // @Prop(type)private propName = propValue;
-  private dataDemo = "data  选项";
+  private dataDemo = 'data  选项';
   // private variableName: typeName = variableValue;
   // public methodName() {}
   public mounted() {
