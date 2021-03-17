@@ -44,6 +44,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'TestSetUp',
     component: () => import('@/views/TestSetUp.vue')
   },
+  {
+    path: '/composition-api',
+    name: 'CompositionApi',
+    component: () => import('@/views/CompositionApi.vue')
+  },
   
 ];
 

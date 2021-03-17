@@ -7,6 +7,7 @@
     <router-link to="/provider-inject">provider/inject</router-link>
     <router-link to="/async-components">async components</router-link>
     <router-link to="/setup">setup</router-link>
+    <router-link to="/composition-api">composition-api</router-link>
   </div>
   <div class="page_container">
     <router-view />
