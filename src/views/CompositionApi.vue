@@ -16,7 +16,7 @@
     <hr>
     <div>book: {{book.title}}</div>
     <hr>
-    <child4>
+    <child4 title="asdasdas">
       <template v-slot:title>
         <span>title</span>
       </template>
@@ -30,7 +30,8 @@ import {
   watch,
   onMounted,
   computed,
-  defineAsyncComponent
+  defineAsyncComponent,
+  provide
 } from 'vue';
 
 // 返回的list也可以是响应式的
@@ -58,6 +59,8 @@ export default {
   setup(props) {
     const name = ref('');
     name.value = 'xdyuan';
+
+    provide('userLocation', 'north pole');
 
     watch(name, (newVal, oldVal) => {
       console.log(newVal, oldVal);

@@ -18,7 +18,7 @@ export default {
   },
   setup(props, context) {
     // childName 可能没有 就需要使用toRef
-    const childName = toRef(props, 'title');
+    const childName = toRef(props, 'childName');
 
     // Attribute (非响应式对象)
     console.log(context.attrs);

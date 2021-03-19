@@ -8,6 +8,9 @@
     <router-link to="/async-components">async components</router-link>
     <router-link to="/setup">setup</router-link>
     <router-link to="/composition-api">composition-api</router-link>
+    <router-link to="/template-reference">模板引用</router-link>
+    <router-link to="/teleport">teleport</router-link>
+    <router-link to="/render">render</router-link>
   </div>
   <div class="page_container">
     <router-view />

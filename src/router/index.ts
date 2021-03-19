@@ -49,7 +49,21 @@ const routes: Array<RouteRecordRaw> = [
     name: 'CompositionApi',
     component: () => import('@/views/CompositionApi.vue')
   },
-  
+  {
+    path: '/template-reference',
+    name: 'TemplateReference',
+    component: () => import('@/views/TemplateReference.vue')
+  },
+  {
+    path: '/teleport',
+    name: 'TeleportStudy',
+    component: () => import('@/views/TeleportStudy.vue')
+  },
+  {
+    path: '/render',
+    name: 'Render',
+    component: () => import('@/views/RenderFunction.vue')
+  }
 ];
 
 const router = createRouter({
