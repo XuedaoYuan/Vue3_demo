@@ -8,14 +8,20 @@
       </template>
     </anchored-heading2>
     <anchored-heading3 :level="1">
-        <span>1111</span>
-        <span>22-333-4444</span>
-        5555
+      <span>1111</span>
+      <span>22-333-4444</span>
+      5555
     </anchored-heading3>
+    <my-input v-model="myValue"></my-input>
+    <div>myValue: {{myValue}}</div>
+    <p>{{x}}</p>
+    <my-checkbox v-model="check"
+                 @change="onCheckboxChange"></my-checkbox>
+    <p>{{check}}</p>
   </div>
 </template>
 <script>
-import { h, toRef, defineAsyncComponent } from 'vue';
+import { h, toRef, ref, defineAsyncComponent } from 'vue';
 /** Recursively get text from children nodes */
 function getChildrenTextContent(children) {
   return children
@@ -79,6 +85,67 @@ const AnchoredHeading3 = {
     ]);
   }
 };
+
+const MyInput = {
+  name: 'MyInput',
+  props: ['modelValue'],
+  emits: ['update:modelValue'],
+  render() {
+    return h(
+      'div',
+      {
+        // modelValue: this.modelValue
+        // 'onUpdate:modelValue': (value) => this.$emit('update:modelValue', value)
+      },
+      [
+        h('input', {
+          value: this.modelValue,
+          onInput: (event) =>
+            this.$emit('update:modelValue', event.target.value)
+        }),
+        h(
+          'button',
+          {
+            onClick: this.onClick
+          },
+          'click me'
+        )
+      ]
+    );
+  },
+  methods: {
+    onClick(event) {
+      console.log('click', event);
+    }
+  }
+};
+
+const MyCheckbox = {
+  name: 'MyCheckbox',
+  props: {
+    modelValue: {
+      type: Boolean,
+      default: false
+    }
+  },
+  emits: ['update:modelValue', 'change'],
+  render() {
+    return h('div', {}, [
+      h('input', {
+        type: 'checkbox',
+        checked: this.modelValue,
+        onChange: this.onChange
+      })
+    ]);
+  },
+  methods: {
+    onChange(event) {
+      this.$emit('update:modelValue', event.target.checked);
+      this.$emit('change', event.target.checked);
+    }
+  }
+};
+
 export default {
   name: 'RenderFunction',
   components: {
@@ -86,15 +153,35 @@ export default {
     'anchored-heading3': AnchoredHeading3,
     'anchored-heading2': defineAsyncComponent(() =>
       import('@/components/AnchoredHeading.vue')
-    )
+    ),
+    'my-input': MyInput,
+    'my-checkbox': MyCheckbox
   },
   props: {},
-  setup() {
-    return {};
-  }
+  data() {
+    return {
+      x: 1,
+      myValue: 'ss',
+      check: true
+    };
+  },
+  /* setup() {
+    const myValue = ref('');
+    myValue.value = 'sss';
+    return {
+      myValue
+    };
+  } */
 
   // created() {},
-  // ,methods: {}
+  methods: {
+    onUpdate(value) {
+      console.log(value);
+    },
+    onCheckboxChange(val) {
+      console.log(val);
+    }
+  }
 };
 </script>
 <style lang='stylus' scoped></style>
