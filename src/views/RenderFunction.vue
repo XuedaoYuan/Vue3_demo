@@ -18,6 +18,7 @@
     <my-checkbox v-model="check"
                  @change="onCheckboxChange"></my-checkbox>
     <p>{{check}}</p>
+    <p>{{$translate("greeting.hi")}}</p>
   </div>
 </template>
 <script>
@@ -155,7 +156,7 @@ export default {
       import('@/components/AnchoredHeading.vue')
     ),
     'my-input': MyInput,
-    'my-checkbox': MyCheckbox
+    'my-checkbox': defineAsyncComponent(() => Promise.resolve(MyCheckbox))
   },
   props: {},
   data() {

@@ -2,13 +2,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: Home,
     meta: {
-      title: 'sss'
+      title: 'Home'
     }
   },
   {
@@ -52,6 +52,9 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/template-reference',
     name: 'TemplateReference',
+    meta: {
+      title: '模板引用'
+    },
     component: () => import('@/views/TemplateReference.vue')
   },
   {
@@ -63,6 +66,27 @@ const routes: Array<RouteRecordRaw> = [
     path: '/render',
     name: 'Render',
     component: () => import('@/views/RenderFunction.vue')
+  },
+  {
+    path: '/reactive-base',
+    name: 'ReactiveBase',
+    component: () => import('@/views/ReactiveBase.vue')
+  },
+  {
+    path: '/typescript',
+    name: 'Typescript',
+    component: () => import('@/views/Typescript.vue'),
+    meta: {
+      title: 'setup ts'
+    }
+  },
+  {
+    path: '/directive',
+    name: 'Directive',
+    component: () => import('@/views/Directive.vue'),
+    meta: {
+      title: '自定义指令'
+    }
   }
 ];
 
