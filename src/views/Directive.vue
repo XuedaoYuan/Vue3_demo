@@ -9,11 +9,29 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, toRef, unref } from 'vue';
 export default defineComponent({
   name: 'Directive',
   setup() {
     const show = ref(false);
+    console.log(unref(show));
+
+    Boolean.prototype.toString = function () {
+      if (this) {
+        return '真';
+      }
+      return '假';
+    };
+
+    console.log(unref(show).toString());
+    console.log(Boolean.prototype.toString.call('1'));
+
+    const state = { count: 0 };
+    const stateRef = toRef(state, 'count');
+    stateRef.value++;
+    console.log("stateRef.value", stateRef.value);
+    console.log("state.count", state.count);
+
     return { show };
   }
   // ,created() {},

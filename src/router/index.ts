@@ -87,6 +87,30 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       title: '自定义指令'
     }
+  },
+  {
+    path: '/custom-ref',
+    name: 'CustomRef',
+    component: () => import('@/views/CustomRef.vue'),
+    meta: {
+      title: '自定义ref'
+    }
+  },
+  {
+    path: '/life-circle',
+    name: 'LifeCircle',
+    component: () => import('@/views/LifeCircle.vue'),
+    meta: {
+      title: '生命周期'
+    }
+  },
+  {
+    path: '/css-module',
+    name: 'CSSModule',
+    component: () => import('@/views/CSSModule.vue'),
+    meta: {
+      title: 'css module'
+    }
   }
 ];
 

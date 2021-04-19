@@ -13,8 +13,8 @@ const app = createApp(App);
 console.log(app.config);
 app.component('say-hi', SayHi);
 
-const sayHiComponent = app.component('say-hi', {});
-console.log(sayHiComponent, '--');
+// const sayHiComponent = app.component('say-hi', {});
+// console.log(sayHiComponent, '--');
 
 // 全局变量 其他的组件实例可以使用比如this.$all 访问到
 app.config.globalProperties.$all = Promise.all;

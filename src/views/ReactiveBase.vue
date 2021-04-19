@@ -1,6 +1,6 @@
 
 <script>
-import { ref, watch, h, reactive } from 'vue';
+import { ref, watch, h, reactive, isProxy } from 'vue';
 const Child = {
   name: 'Child',
   props: ['title'],
@@ -51,6 +51,7 @@ export default {
       },
       { deep: true }
     );
+    console.log(isProxy(state), '---------------');
     return () =>
       h(
         'div',
