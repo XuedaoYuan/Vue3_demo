@@ -1,7 +1,14 @@
 <template>
   <div>
     <button :class="[$style.button]">button</button>
-    <p :class="[a.red]">asdasd</p>
+    <p
+      v-if="true"
+      :class="[a.red]"
+      title="sss"
+    >
+      <span>sss</span>
+      <span>555</span>
+    </p>
   </div>
 </template>
 <script lang="ts">

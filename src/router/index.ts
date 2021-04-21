@@ -111,6 +111,22 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'css module'
     }
+  },
+  {
+    path: '/markdown',
+    name: 'Markdown',
+    component: () => import('@/views/Markdown.vue'),
+    meta: {
+      title: 'Markdown'
+    }
+  },
+  {
+    path: '/draggable-header',
+    name: 'DraggableHeader',
+    component: () => import('@/views/DraggableHeaderView.vue'),
+    meta: {
+      title: 'DraggableHeader'
+    }
   }
 ];
 
