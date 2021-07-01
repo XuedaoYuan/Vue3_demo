@@ -127,6 +127,22 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'DraggableHeader'
     }
+  },
+  {
+    path: '/my-tab',
+    name: 'MyTab',
+    component: () => import('@/views/MyTab.vue'),
+    meta: {
+      title: '标签栏'
+    }
+  },
+  {
+    path: '/hooks',
+    name: 'Hooks',
+    component: () => import('@/views/Hooks/Hooks.vue'),
+    meta: {
+      title: 'Hooks'
+    }
   }
 ];
 
